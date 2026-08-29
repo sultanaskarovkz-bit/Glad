@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04070C">
+<title>ГЛАДЬ - натяжные потолки в Алматы</title>
+<meta name="description" content="Натяжные потолки в Алматы. Глянец, мат, сатин, парящие, световые линии, звёздное небо. Замер бесплатно, монтаж за один день.">
+
+<!--
+=====================================================================
+  ЯКОРИ ДЛЯ КОНТЕКСТНОЙ РЕКЛАМЫ (можно вести трафик прямо на блок)
+  #top                 главный экран
+  #glyanec             глянцевые потолки
+  #mat                 матовые потолки
+  #satin               сатиновые потолки
+  #paryashchie         парящие потолки
+  #linii               световые линии
+  #zvezdnoe-nebo       звёздное небо
+  #fotopechat          фотопечать
+  #mnogourovnevye      многоуровневые
+  #tenevye             теневые
+  #kalkulyator         калькулятор стоимости
+  #etapy               этапы работы
+  #garantiya           гарантия и цифры
+  #zayavka             форма заявки
+  #kontakty            контакты
+  Пример: glad.kz/#zvezdnoe-nebo
+=====================================================================
+  ЗАМЕНИТЬ ПЕРЕД ЗАПУСКОМ:
+  1) Телефон и WhatsApp: найти по строке 77000000000 и +7 700 000 00 00
+  2) Instagram: найти по строке INSTAGRAM_LINK
+  3) Фото: сейчас стоят снимки с Unsplash. Меняются в атрибутах src у <img>
+  4) Цены: проверить блоки .chip и объект PRICES в скрипте
+=====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#04070C;
+  --deep:#081220;
+  --surf:#0D1B2A;
+  --line:rgba(234,242,248,.12);
+  --light:#EAF2F8;
+  --mist:rgba(234,242,248,.58);
+  --aqua:#7DD8F0;
+  --aqua-soft:rgba(125,216,240,.16);
+  --pad:22px;
+  --r:16px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);color:var(--light);
+  font-family:'Onest',system-ui,sans-serif;font-weight:300;
+  line-height:1.55;overflow-x:hidden;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+::selection{background:var(--aqua);color:var(--ink)}
+
+/* ---------- ТИПОГРАФИКА ---------- */
+.serif{font-family:'Playfair Display',Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.02}
+.eyebrow{
+  font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--aqua);font-weight:500;
+}
+.lead{font-size:15px;color:var(--mist);line-height:1.6;max-width:34ch}
+
+/* Отражение текста - фирменная деталь бренда */
+.mirror{position:relative;display:inline-block}
+.mirror::after{
+  content:attr(data-m);position:absolute;left:0;top:100%;
+  transform:scaleY(-1);transform-origin:top;
+  opacity:.2;filter:blur(1.4px);pointer-events:none;white-space:nowrap;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 62%);
+  mask-image:linear-gradient(180deg,#000,transparent 62%);
+}
+
+/* ---------- ПРЕЛОАДЕР ---------- */
+#pre{
+  position:fixed;inset:0;z-index:200;background:var(--ink);
+  display:grid;place-items:center;transition:opacity .7s var(--ease),visibility .7s;
+}
+#pre.off{opacity:0;visibility:hidden}
+.pre-stage{position:relative;width:220px;height:220px;display:grid;place-items:center}
+.drop{
+  position:absolute;top:0;left:50%;width:8px;height:8px;margin-left:-4px;
+  border-radius:0 50% 50% 50%;transform:rotate(45deg);
+  background:var(--aqua);animation:fall .7s cubic-bezier(.5,0,.9,.4) forwards;
+}
+@keyframes fall{0%{top:-40px;opacity:0}20%{opacity:1}100%{top:106px;opacity:1;transform:rotate(45deg) scale(.3)}}
+.ring{
+  position:absolute;top:50%;left:50%;width:20px;height:20px;margin:-10px 0 0 -10px;
+  border:1px solid var(--aqua);border-radius:50%;opacity:0;
+  animation:ripple 1.6s var(--ease) forwards;
+}
+.ring:nth-child(3){animation-delay:.82s}
+.ring:nth-child(4){animation-delay:.98s}
+@keyframes ripple{0%{transform:scale(.2);opacity:.9}100%{transform:scale(11);opacity:0}}
+.pre-mark{opacity:0;animation:preIn .9s var(--ease) .8s forwards}
+@keyframes preIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- ПРОГРЕСС ---------- */
+#bar{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:120;
+  background:linear-gradient(90deg,transparent,var(--aqua));
+  box-shadow:0 0 12px var(--aqua);
+}
+
+/* ---------- ШАПКА ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:110;
+  padding:14px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+header.solid{
+  background:rgba(4,7,12,.72);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-bottom-color:var(--line);
+}
+.brand{display:flex;align-items:center;gap:9px}
+.brand svg{width:26px;height:26px;flex:none}
+.brand-name{
+  font-family:'Playfair Display',serif;font-size:19px;letter-spacing:.2em;
+  padding-left:2px;
+}
+.hbtns{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(234,242,248,.04);display:grid;place-items:center;cursor:pointer;
+  transition:.3s var(--ease);
+}
+.icon-btn:active{transform:scale(.9)}
+.icon-btn svg{width:17px;height:17px;stroke:var(--light);fill:none;stroke-width:1.5}
+.burger{width:18px;height:11px;position:relative}
+.burger i{
+  position:absolute;left:0;height:1.5px;background:var(--light);border-radius:2px;
+  transition:.4s var(--ease);
+}
+.burger i:nth-child(1){top:0;width:18px}
+.burger i:nth-child(2){bottom:0;width:11px}
+.nav-open .burger i:nth-child(1){top:5px;transform:rotate(45deg)}
+.nav-open .burger i:nth-child(2){bottom:4.5px;width:18px;transform:rotate(-45deg)}
+
+/* ---------- МЕНЮ ---------- */
+#nav{
+  position:fixed;inset:0;z-index:105;background:var(--ink);
+  padding:82px var(--pad) 34px;overflow-y:auto;
+  clip-path:circle(0% at calc(100% - 42px) 34px);
+  transition:clip-path .8s var(--ease);
+}
+.nav-open #nav{clip-path:circle(150% at calc(100% - 42px) 34px)}
+#nav ol{list-style:none}
+#nav li{
+  border-bottom:1px solid var(--line);opacity:0;transform:translateY(14px);
+  transition:.6s var(--ease);
+}
+.nav-open #nav li{opacity:1;transform:none}
+#nav a{
+  display:flex;align-items:baseline;gap:14px;padding:15px 2px;
+  font-family:'Playfair Display',serif;font-size:25px;
+}
+#nav a small{
+  font-family:'Onest',sans-serif;font-size:10px;letter-spacing:.2em;
+  color:var(--aqua);opacity:.7;width:22px;flex:none;
+}
+.nav-foot{margin-top:26px;display:flex;gap:10px}
+.nav-foot a{
+  flex:1;text-align:center;padding:14px;border-radius:12px;font-size:14px;
+  border:1px solid var(--line);
+}
+.nav-foot a.wa{background:var(--aqua);color:var(--ink);border-color:var(--aqua);font-weight:500}
+
+/* ---------- ГЛАВНЫЙ ЭКРАН ---------- */
+#top{
+  position:relative;min-height:100svh;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--pad) calc(38px + env(safe-area-inset-bottom));
+}
+.hero-img{position:absolute;inset:0;background:linear-gradient(160deg,#0D1B2A,#04070C)}
+.hero-img img{
+  opacity:0;transform:scale(1.18);filter:blur(12px);
+  transition:opacity 1.6s var(--ease),transform 2.4s var(--ease),filter 1.8s var(--ease);
+}
+body.ready .hero-img img{opacity:.5;transform:scale(1.02);filter:blur(0)}
+.scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(4,7,12,.86) 0%,rgba(4,7,12,.2) 34%,rgba(4,7,12,.72) 68%,var(--ink) 100%);
+}
+/* блики света на воде */
+.caustic{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:.5}
+.caustic b{
+  position:absolute;display:block;border-radius:50%;filter:blur(46px);
+  background:radial-gradient(circle,rgba(125,216,240,.5),transparent 70%);
+}
+.caustic b:nth-child(1){width:280px;height:280px;top:6%;left:-14%;animation:drift 17s ease-in-out infinite}
+.caustic b:nth-child(2){width:220px;height:220px;top:34%;right:-16%;animation:drift 21s ease-in-out infinite reverse}
+.caustic b:nth-child(3){width:180px;height:180px;bottom:14%;left:34%;animation:drift 14s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(28px,-34px) scale(1.22)}}
+
+.hero-in{position:relative;z-index:3}
+.hero-mark{
+  width:44px;height:44px;margin-bottom:24px;opacity:0;
+  animation:up 1s var(--ease) .2s forwards;
+}
+h1{font-size:clamp(46px,15.5vw,86px);margin-bottom:0}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:rise 1.15s var(--ease) forwards}
+h1 span:nth-child(1) i{animation-delay:.35s}
+h1 span:nth-child(2) i{animation-delay:.47s}
+@keyframes rise{to{transform:none}}
+h1 .em{font-style:italic;color:var(--aqua)}
+.hero-sub{
+  margin-top:48px;font-size:15px;color:var(--mist);max-width:26ch;
+  opacity:0;animation:up 1s var(--ease) .9s forwards;
+}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero-cta{
+  margin-top:26px;display:flex;gap:10px;align-items:center;
+  opacity:0;animation:up 1s var(--ease) 1.05s forwards;
+}
+.hero-tags{
+  margin-top:26px;display:flex;flex-wrap:wrap;gap:7px;
+  opacity:0;animation:up 1s var(--ease) 1.2s forwards;
+}
+.tag{
+  font-size:11px;letter-spacing:.06em;padding:7px 12px;border-radius:100px;
+  border:1px solid var(--line);color:var(--mist);
+}
+.scrolls{
+  position:absolute;bottom:calc(30px + env(safe-area-inset-bottom));right:var(--pad);
+  z-index:3;width:1px;height:52px;background:var(--line);overflow:hidden;
+  opacity:0;animation:up 1s ease 1.5s forwards;
+}
+.scrolls::after{
+  content:'';position:absolute;top:-52px;left:0;width:1px;height:52px;
+  background:var(--aqua);animation:trail 2.1s ease-in-out infinite;
+}
+@keyframes trail{0%{top:-52px}60%,100%{top:52px}}
+
+/* рябь по тапу */
+.tap{
+  position:absolute;border:1px solid rgba(125,216,240,.8);border-radius:50%;
+  pointer-events:none;z-index:4;animation:tapOut .95s var(--ease) forwards;
+}
+@keyframes tapOut{0%{width:0;height:0;margin:0;opacity:.9}100%{width:340px;height:340px;margin:-170px 0 0 -170px;opacity:0}}
+
+/* ---------- КНОПКИ ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 24px;border-radius:100px;font-size:14px;font-weight:500;
+  background:var(--light);color:var(--ink);border:none;cursor:pointer;
+  transition:transform .3s var(--ease),box-shadow .4s;
+  box-shadow:0 6px 26px rgba(125,216,240,.12);
+}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:transparent;color:var(--light);border:1px solid var(--line);box-shadow:none}
+.btn.aqua{background:var(--aqua);color:#02141B}
+.btn.block{width:100%}
+
+/* ---------- ОБЩИЕ СЕКЦИИ ---------- */
+section{position:relative;scroll-margin-top:0}
+.pad{padding:76px var(--pad)}
+.sec-head{margin-bottom:34px}
+.sec-head h2{font-size:clamp(30px,8.6vw,44px);margin-top:12px}
+
+/* появление */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* ---------- ВИДЫ ПОТОЛКОВ ---------- */
+.type{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--pad) 68px;overflow:hidden;scroll-margin-top:0;
+}
+.type-media{position:absolute;inset:0;background:linear-gradient(150deg,#0D1B2A,#04070C);overflow:hidden}
+.type-media img{
+  opacity:0;transform:scale(1.16);filter:blur(14px) saturate(.55);
+  transition:opacity 1.3s var(--ease),transform 1.9s var(--ease),filter 1.5s var(--ease);
+}
+.type.in .type-media img{opacity:.52;transform:scale(1);filter:blur(0) saturate(1)}
+.type-media .scrim{
+  background:linear-gradient(180deg,var(--ink) 0%,rgba(4,7,12,.22) 30%,rgba(4,7,12,.78) 66%,var(--ink) 100%);
+}
+/* волна полотна, которая натягивается */
+.wave{
+  position:absolute;top:-1px;left:0;width:100%;height:96px;z-index:2;
+  transform-origin:top;transform:scaleY(1);
+  transition:transform 1.5s var(--ease);
+}
+.type.in .wave{transform:scaleY(0)}
+.wave svg{width:100%;height:100%;display:block}
+.type-in{position:relative;z-index:3}
+.tnum{
+  font-size:10px;letter-spacing:.3em;color:var(--aqua);display:block;margin-bottom:14px;
+}
+.type h2{font-size:clamp(38px,12vw,68px);margin-bottom:26px}
+.type .lead{font-size:15px}
+.chip{
+  display:inline-block;margin-top:22px;padding:9px 16px;border-radius:100px;
+  border:1px solid var(--aqua-soft);background:rgba(125,216,240,.07);
+  font-size:13px;color:var(--aqua);
+}
+.type-cta{margin-top:24px;display:flex;gap:10px}
+
+/* парящий контур */
+.glowline{
+  position:absolute;left:var(--pad);right:var(--pad);top:34%;height:1px;z-index:2;
+  background:var(--aqua);opacity:0;
+  box-shadow:0 0 20px 3px rgba(125,216,240,.75);
+}
+.type.in .glowline{animation:glowIn 2.6s var(--ease) .35s forwards}
+@keyframes glowIn{0%{opacity:0;transform:scaleX(0)}40%{opacity:1;transform:scaleX(1)}70%{opacity:.5}100%{opacity:.85;transform:scaleX(1)}}
+
+/* световые линии */
+.lines{position:absolute;inset:0;z-index:2;pointer-events:none}
+.lines svg{width:100%;height:100%}
+.lines path{
+  stroke:var(--aqua);stroke-width:2;fill:none;stroke-linecap:round;
+  filter:drop-shadow(0 0 8px rgba(125,216,240,.9));
+  stroke-dasharray:400;stroke-dashoffset:400;
+}
+.type.in .lines path{transition:stroke-dashoffset 1.8s var(--ease) .4s;stroke-dashoffset:0}
+.type.in .lines path:nth-child(2){transition-delay:.62s}
+.type.in .lines path:nth-child(3){transition-delay:.84s}
+
+/* звёздное небо */
+.sky{position:absolute;inset:0;z-index:2;pointer-events:none}
+.star{
+  position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;
+  opacity:0;animation:tw 3.4s ease-in-out infinite;
+}
+@keyframes tw{0%,100%{opacity:.06;transform:scale(.6)}50%{opacity:1;transform:scale(1.35)}}
+
+/* фотопечать - смена картинки */
+.slide-stack img{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease)}
+.slide-stack img.on{opacity:.52}
+
+/* ---------- КАЛЬКУЛЯТОР ---------- */
+#kalkulyator{scroll-margin-top:70px;background:linear-gradient(180deg,var(--ink),var(--deep) 45%,var(--ink))}
+.calc{
+  border:1px solid var(--line);border-radius:24px;padding:26px 20px;
+  background:rgba(234,242,248,.03);backdrop-filter:blur(6px);
+}
+.pick{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px}
+.pick button{
+  padding:9px 14px;border-radius:100px;font-size:12.5px;cursor:pointer;
+  background:transparent;border:1px solid var(--line);color:var(--mist);
+  transition:.3s var(--ease);
+}
+.pick button.on{background:var(--aqua);border-color:var(--aqua);color:#02141B;font-weight:500}
+.row{margin-bottom:22px}
+.row-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.row-top span{font-size:12.5px;color:var(--mist);letter-spacing:.04em}
+.row-top b{font-family:'Playfair Display',serif;font-size:20px;font-weight:400}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--aqua) var(--f,40%),rgba(234,242,248,.14) var(--f,40%));
+  outline:none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--light);cursor:pointer;box-shadow:0 0 0 6px rgba(125,216,240,.16);
+}
+input[type=range]::-moz-range-thumb{
+  width:24px;height:24px;border:none;border-radius:50%;background:var(--light);cursor:pointer;
+}
+.total{
+  margin-top:28px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+}
+.total small{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist)}
+.total .sum{font-family:'Playfair Display',serif;font-size:clamp(30px,9vw,42px);line-height:1}
+.total .sum em{font-style:normal;font-size:.5em;color:var(--mist);margin-left:4px}
+.note{margin-top:14px;font-size:11.5px;color:var(--mist);line-height:1.5}
+
+/* ---------- ЭТАПЫ ---------- */
+#etapy{scroll-margin-top:70px}
+.rail{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  margin:0 calc(var(--pad) * -1);padding:4px var(--pad) 10px;
+  scrollbar-width:none;
+}
+.rail::-webkit-scrollbar{display:none}
+.step{
+  flex:0 0 74%;scroll-snap-align:center;border:1px solid var(--line);
+  border-radius:20px;padding:24px 20px;background:rgba(234,242,248,.03);
+  min-height:200px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.step .st-n{
+  font-family:'Playfair Display',serif;font-size:38px;color:var(--aqua);opacity:.5;line-height:1;
+}
+.step h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:8px}
+.step p{font-size:13.5px;color:var(--mist);line-height:1.55}
+
+/* ---------- ЦИФРЫ ---------- */
+#garantiya{scroll-margin-top:70px;text-align:center}
+.nums{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.num-cell{background:var(--ink);padding:30px 16px}
+.num-cell .v{font-family:'Playfair Display',serif;font-size:46px;line-height:1}
+.num-cell .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+
+/* ---------- ФОРМА ---------- */
+#zayavka{scroll-margin-top:70px;background:linear-gradient(180deg,var(--ink),var(--deep))}
+.field{margin-bottom:14px}
+.field input,.field select{
+  width:100%;padding:16px 18px;border-radius:14px;background:rgba(234,242,248,.05);
+  border:1px solid var(--line);font-size:15px;transition:.3s;
+}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mist) 50%),linear-gradient(135deg,var(--mist) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 15px) 22px;background-size:5px 5px;background-repeat:no-repeat}
+.field input:focus,.field select:focus{outline:none;border-color:var(--aqua);background:rgba(125,216,240,.07)}
+.field input::placeholder{color:rgba(234,242,248,.3)}
+.privacy{margin-top:14px;font-size:11px;color:var(--mist);text-align:center;line-height:1.5}
+
+/* ---------- КОНТАКТЫ ---------- */
+#kontakty{scroll-margin-top:70px;text-align:center;padding-bottom:120px}
+.contact-grid{display:grid;gap:10px;margin-top:26px}
+.contact-grid a{
+  padding:17px;border:1px solid var(--line);border-radius:14px;font-size:14.5px;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+}
+.contact-grid a.wa{background:var(--aqua);color:#02141B;border-color:var(--aqua);font-weight:500}
+footer{
+  padding:26px var(--pad) calc(96px + env(safe-area-inset-bottom));
+  border-top:1px solid var(--line);text-align:center;
+  font-size:11px;color:var(--mist);letter-spacing:.05em;
+}
+
+/* ---------- НИЖНЯЯ ПАНЕЛЬ ---------- */
+#dock{
+  position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:100;
+  display:flex;gap:8px;padding:8px;border-radius:100px;
+  background:rgba(8,18,32,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--line);
+  transform:translateY(140%);transition:transform .6s var(--ease);
+}
+#dock.up{transform:none}
+#dock .btn{flex:1;padding:14px 10px;font-size:13.5px}
+#dock .round{
+  width:48px;height:48px;flex:none;border-radius:50%;background:var(--aqua);
+  display:grid;place-items:center;
+}
+#dock .round svg{width:21px;height:21px;fill:#02141B}
+
+/* ---------- ПЛАНШЕТ И ДЕСКТОП ---------- */
+@media(min-width:640px){
+  :root{--pad:44px}
+  .lead{font-size:16px}
+  .nums{grid-template-columns:repeat(3,1fr)}
+  .step{flex:0 0 300px}
+  .contact-grid{grid-template-columns:repeat(3,1fr)}
+  .calc{padding:38px}
+}
+@media(min-width:1000px){
+  :root{--pad:80px}
+  .wrap{max-width:1100px;margin:0 auto}
+  .pad{padding:120px var(--pad)}
+  .type{padding-bottom:110px}
+  .type h2{font-size:80px}
+  h1{font-size:104px}
+  #dock{display:none}
+  .type-in,.hero-in{max-width:1100px;margin:0 auto;width:100%}
+  #kalkulyator .wrap,#etapy .wrap,#garantiya .wrap,#zayavka .wrap,#kontakty .wrap{max-width:820px}
+  .rail{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .type-media img,.hero-img img{opacity:.5;transform:none;filter:none}
+  .wave{transform:scaleY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- ПРЕЛОАДЕР -->
+<div id="pre">
+  <div class="pre-stage">
+    <span class="drop"></span>
+    <span class="ring"></span>
+    <span class="ring"></span>
+    <span class="ring"></span>
+    <div class="pre-mark">
+      <svg width="86" height="86" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="40" r="21" stroke="#7DD8F0" stroke-width="1.2"/>
+        <path d="M14 62h72" stroke="#EAF2F8" stroke-width="1.2"/>
+        <circle cx="50" cy="84" r="21" stroke="#7DD8F0" stroke-width="1.2" opacity=".25"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div id="bar"></div>
+
+<!-- ШАПКА -->
+<header id="hd">
+  <a href="#top" class="brand">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="40" r="21" stroke="#7DD8F0" stroke-width="4"/>
+      <path d="M10 62h80" stroke="#EAF2F8" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="50" cy="84" r="21" stroke="#7DD8F0" stroke-width="4" opacity=".25"/>
+    </svg>
+    <span class="brand-name">ГЛАДЬ</span>
+  </a>
+  <div class="hbtns">
+    <a href="tel:+77000000000" class="icon-btn" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    </a>
+    <button class="icon-btn" id="menuBtn" aria-label="Меню">
+      <span class="burger"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- МЕНЮ -->
+<nav id="nav">
+  <ol>
+    <li><a href="#glyanec"><small>01</small>Глянцевые</a></li>
+    <li><a href="#mat"><small>02</small>Матовые</a></li>
+    <li><a href="#satin"><small>03</small>Сатиновые</a></li>
+    <li><a href="#paryashchie"><small>04</small>Парящие</a></li>
+    <li><a href="#linii"><small>05</small>Световые линии</a></li>
+    <li><a href="#zvezdnoe-nebo"><small>06</small>Звёздное небо</a></li>
+    <li><a href="#fotopechat"><small>07</small>Фотопечать</a></li>
+    <li><a href="#mnogourovnevye"><small>08</small>Многоуровневые</a></li>
+    <li><a href="#tenevye"><small>09</small>Теневые</a></li>
+    <li><a href="#kalkulyator"><small>10</small>Расчёт цены</a></li>
+  </ol>
+  <div class="nav-foot">
+    <a href="tel:+77000000000">Позвонить</a>
+    <a class="wa" href="https://wa.me/77000000000?text=Здравствуйте!%20Хочу%20узнать%20про%20натяжные%20потолки" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section id="top">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=70&auto=format&fit=crop" alt="Интерьер с натяжным потолком" fetchpriority="high" onerror="this.remove()">
+  </div>
+  <div class="caustic"><b></b><b></b><b></b></div>
+  <div class="scrim"></div>
+
+  <div class="hero-in">
+    <svg class="hero-mark" viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="40" r="21" stroke="#7DD8F0" stroke-width="3"/>
+      <path d="M10 62h80" stroke="#EAF2F8" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="84" r="21" stroke="#7DD8F0" stroke-width="3" opacity=".25"/>
+    </svg>
+    <h1 class="serif">
+      <span><i>Потолок,</i></span>
+      <span><i class="mirror" data-m="ровный как вода"><em class="em">ровный как вода</em></i></span>
+    </h1>
+    <p class="hero-sub">Натяжные потолки в Алматы. Замер бесплатно, монтаж за один день.</p>
+    <div class="hero-cta">
+      <a href="#zayavka" class="btn">Вызвать замерщика</a>
+      <a href="#kalkulyator" class="btn ghost">Цена</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Гарантия 12 лет</span>
+      <span class="tag">Германия и Бельгия</span>
+      <span class="tag">Без пыли</span>
+    </div>
+  </div>
+  <div class="scrolls"></div>
+</section>
+
+<!-- 01 ГЛЯНЦЕВЫЕ -->
+<section class="type" id="glyanec">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=70&auto=format&fit=crop" alt="Глянцевый натяжной потолок" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V44 C320,86 240,10 160,50 C100,80 50,40 0,60 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">01 / ГЛЯНЕЦ</span>
+    <h2 class="serif mirror" data-m="Глянцевые">Глянцевые</h2>
+    <p class="lead">Зеркальное отражение поднимает комнату визуально в два раза.</p>
+    <div class="chip">от 3 500 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Глянцевые">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 02 МАТОВЫЕ -->
+<section class="type" id="mat">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1200&q=70&auto=format&fit=crop" alt="Матовый натяжной потолок" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V54 C330,20 250,80 170,46 C110,20 60,70 0,42 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">02 / МАТ</span>
+    <h2 class="serif mirror" data-m="Матовые">Матовые</h2>
+    <p class="lead">Ровный свет без бликов. Выглядит как идеальная штукатурка.</p>
+    <div class="chip">от 3 200 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Матовые">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 03 САТИНОВЫЕ -->
+<section class="type" id="satin">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=70&auto=format&fit=crop" alt="Сатиновый натяжной потолок" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V40 C340,84 260,24 180,58 C120,84 60,34 0,54 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">03 / САТИН</span>
+    <h2 class="serif mirror" data-m="Сатиновые">Сатиновые</h2>
+    <p class="lead">Мягкий перламутр. Середина между глянцем и матом.</p>
+    <div class="chip">от 3 800 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Сатиновые">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 04 ПАРЯЩИЕ -->
+<section class="type" id="paryashchie">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=70&auto=format&fit=crop" alt="Парящий натяжной потолок с подсветкой" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="glowline"></div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V50 C320,14 250,74 160,44 C100,24 50,66 0,46 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">04 / ПОДСВЕТКА</span>
+    <h2 class="serif mirror" data-m="Парящие">Парящие</h2>
+    <p class="lead">Светящийся контур по периметру. Потолок будто не касается стен.</p>
+    <div class="chip">от 9 900 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Парящие">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 05 СВЕТОВЫЕ ЛИНИИ -->
+<section class="type" id="linii">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=70&auto=format&fit=crop" alt="Световые линии в потолке" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="lines">
+    <svg viewBox="0 0 400 700" preserveAspectRatio="none">
+      <path d="M40 150 H360"/>
+      <path d="M40 210 H240"/>
+      <path d="M120 270 H360"/>
+    </svg>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V46 C330,80 240,18 150,54 C90,78 44,38 0,58 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">05 / LED</span>
+    <h2 class="serif mirror" data-m="Световые">Световые</h2>
+    <p class="lead">Линии света вместо люстры. Чистая геометрия и никаких проводов.</p>
+    <div class="chip">от 25 000 ₸ за пог. м</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Световые линии">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 06 ЗВЁЗДНОЕ НЕБО -->
+<section class="type" id="zvezdnoe-nebo">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&q=70&auto=format&fit=crop" alt="Потолок звёздное небо" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="sky" id="sky"></div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V56 C310,18 230,76 150,44 C90,20 50,62 0,40 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">06 / ОПТОВОЛОКНО</span>
+    <h2 class="serif mirror" data-m="Звёздное небо">Звёздное небо</h2>
+    <p class="lead">До 400 точек света с пультом. Детская, спальня, зона отдыха.</p>
+    <div class="chip">от 15 000 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Звёздное небо">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 07 ФОТОПЕЧАТЬ -->
+<section class="type" id="fotopechat">
+  <div class="type-media slide-stack" id="stack">
+    <img loading="lazy" decoding="async" class="on" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=70&auto=format&fit=crop" alt="Фотопечать на потолке" onerror="this.remove()">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=70&auto=format&fit=crop" alt="Фотопечать в интерьере" onerror="this.remove()">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=70&auto=format&fit=crop" alt="Фотопечать в интерьере" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V42 C340,78 260,20 175,56 C110,84 55,36 0,60 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">07 / ПЕЧАТЬ</span>
+    <h2 class="serif mirror" data-m="Фотопечать">Фотопечать</h2>
+    <p class="lead">Любое изображение в разрешении 1440 dpi. Хоть небо, хоть ваш эскиз.</p>
+    <div class="chip">от 9 500 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Фотопечать">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 08 МНОГОУРОВНЕВЫЕ -->
+<section class="type" id="mnogourovnevye">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1200&q=70&auto=format&fit=crop" alt="Многоуровневый потолок" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V58 C320,22 240,74 165,42 C105,18 55,64 0,44 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">08 / УРОВНИ</span>
+    <h2 class="serif mirror" data-m="Многоуровневые">Многоуровневые</h2>
+    <p class="lead">Ниши, короба и переходы. Зонируют пространство без стен.</p>
+    <div class="chip">от 12 000 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Многоуровневые">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- 09 ТЕНЕВЫЕ -->
+<section class="type" id="tenevye">
+  <div class="type-media">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=70&auto=format&fit=crop" alt="Теневой натяжной потолок" onerror="this.remove()">
+    <div class="scrim"></div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><path d="M0,0 H400 V48 C335,84 255,22 170,52 C108,74 52,32 0,56 Z" fill="#04070C"/></svg></div>
+  <div class="type-in">
+    <span class="tnum">09 / БЕЗ ПЛИНТУСА</span>
+    <h2 class="serif mirror" data-m="Теневые">Теневые</h2>
+    <p class="lead">Тонкий тёмный зазор вместо багета. Профиль Slott и Euro Kraab.</p>
+    <div class="chip">от 11 000 ₸ за м²</div>
+    <div class="type-cta"><a href="#zayavka" class="btn" data-type="Теневые">Рассчитать</a></div>
+  </div>
+</section>
+
+<!-- КАЛЬКУЛЯТОР -->
+<section id="kalkulyator" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Расчёт</span>
+      <h2 class="serif mirror" data-m="Сколько выйдет">Сколько выйдет</h2>
+    </div>
+    <div class="calc rv d1">
+      <div class="pick" id="pick"></div>
+      <div class="row">
+        <div class="row-top"><span>Длина комнаты</span><b><span id="lv">4.0</span> м</b></div>
+        <input type="range" id="len" min="2" max="12" step="0.1" value="4">
+      </div>
+      <div class="row">
+        <div class="row-top"><span>Ширина комнаты</span><b><span id="wv">3.5</span> м</b></div>
+        <input type="range" id="wid" min="2" max="12" step="0.1" value="3.5">
+      </div>
+      <div class="total">
+        <div>
+          <small>Площадь <span id="area">14</span> м²</small>
+          <div class="sum" id="sum">0<em>₸</em></div>
+        </div>
+        <a href="#zayavka" class="btn aqua">Уточнить</a>
+      </div>
+      <p class="note">Расчёт предварительный. Точная сумма после бесплатного замера: зависит от количества углов, светильников и высоты стен.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ЭТАПЫ -->
+<section id="etapy" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Как проходит</span>
+      <h2 class="serif mirror" data-m="Один день">Один день</h2>
+    </div>
+    <div class="rail rv d1">
+      <div class="step"><span class="st-n">1</span><div><h3>Замер</h3><p>Приезжаем бесплатно в удобное время, считаем при вас.</p></div></div>
+      <div class="step"><span class="st-n">2</span><div><h3>Выбор</h3><p>Показываем образцы фактур и вариантов света вживую.</p></div></div>
+      <div class="step"><span class="st-n">3</span><div><h3>Раскрой</h3><p>Полотно режут по вашим размерам на производстве.</p></div></div>
+      <div class="step"><span class="st-n">4</span><div><h3>Монтаж</h3><p>От 3 часов на комнату. Убираем за собой, мебель на месте.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЦИФРЫ -->
+<section id="garantiya" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Гарантия</span>
+      <h2 class="serif mirror" data-m="Держим слово">Держим слово</h2>
+    </div>
+    <div class="nums rv d1">
+      <div class="num-cell"><div class="v" data-count="12">0</div><div class="k">лет гарантии</div></div>
+      <div class="num-cell"><div class="v" data-count="1400" data-suffix="+">0</div><div class="k">потолков в Алматы</div></div>
+      <div class="num-cell"><div class="v" data-count="3" data-suffix=" ч">0</div><div class="k">на одну комнату</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЗАЯВКА -->
+<section id="zayavka" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Заявка</span>
+      <h2 class="serif mirror" data-m="Замер бесплатно">Замер бесплатно</h2>
+    </div>
+    <div class="rv d1">
+      <div class="field">
+        <select id="fType">
+          <option>Глянцевые</option><option>Матовые</option><option>Сатиновые</option>
+          <option>Парящие</option><option>Световые линии</option><option>Звёздное небо</option>
+          <option>Фотопечать</option><option>Многоуровневые</option><option>Теневые</option>
+          <option>Пока не выбрал</option>
+        </select>
+      </div>
+      <div class="field"><input id="fName" type="text" placeholder="Как вас зовут" autocomplete="name"></div>
+      <div class="field"><input id="fTel" type="tel" placeholder="+7 (___) ___ __ __" autocomplete="tel" inputmode="tel"></div>
+      <button class="btn aqua block" id="send">Отправить в WhatsApp</button>
+      <p class="privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section id="kontakty" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center">
+      <span class="eyebrow">Алматы</span>
+      <h2 class="serif">Свяжитесь</h2>
+    </div>
+    <div class="contact-grid rv d1">
+      <a class="wa" href="https://wa.me/77000000000?text=Здравствуйте!%20Хочу%20рассчитать%20натяжной%20потолок" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+77000000000">+7 700 000 00 00</a>
+      <a href="INSTAGRAM_LINK" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>ГЛАДЬ · натяжные потолки · Алматы</footer>
+
+<!-- НИЖНЯЯ ПАНЕЛЬ -->
+<div id="dock">
+  <a href="#zayavka" class="btn aqua" style="flex:1">Вызвать замерщика</a>
+  <a class="round" href="https://wa.me/77000000000?text=Здравствуйте!%20Хочу%20рассчитать%20натяжной%20потолок" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.1c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.3-4.9-4.4-5-4.6-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.2.5 0 .7l-.4.5-.3.4c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.2.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.8-.1 1.4Z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- ПРЕЛОАДЕР ---- */
+  function boot(){
+    document.body.classList.add('ready');
+    setTimeout(function(){
+      var p = document.getElementById('pre');
+      if(p) p.classList.add('off');
+      if(location.hash){
+        var t = document.querySelector(location.hash);
+        if(t) setTimeout(function(){ t.scrollIntoView(); }, 80);
+      }
+    }, RM ? 100 : 1750);
+  }
+  if(document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot);
+
+  /* ---- МЕНЮ ---- */
+  var mb = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  var items = nav.querySelectorAll('li');
+  items.forEach(function(li,i){ li.style.transitionDelay = (0.06*i + 0.12) + 's'; });
+  mb.addEventListener('click', function(){
+    document.body.classList.toggle('nav-open');
+    document.body.style.overflow = document.body.classList.contains('nav-open') ? 'hidden' : '';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.closest('a')){
+      document.body.classList.remove('nav-open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  /* ---- ПРОГРЕСС, ШАПКА, ПАНЕЛЬ ---- */
+  var bar = document.getElementById('bar');
+  var hd = document.getElementById('hd');
+  var dock = document.getElementById('dock');
+  var tick = false;
+  function onScroll(){
+    var y = window.scrollY;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (y/h*100) : 0) + '%';
+    hd.classList.toggle('solid', y > 40);
+    dock.classList.toggle('up', y > window.innerHeight * 0.85);
+    tick = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!tick){ tick = true; requestAnimationFrame(onScroll); }
+  }, {passive:true});
+  onScroll();
+
+  /* ---- ПОЯВЛЕНИЕ БЛОКОВ ---- */
+  var io = new IntersectionObserver(function(en){
+    en.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); }
+    });
+  }, {threshold: 0.18, rootMargin: '0px 0px -8% 0px'});
+  document.querySelectorAll('.rv, .type').forEach(function(el){ io.observe(el); });
+
+  /* ---- РЯБЬ ПО ТАПУ НА ГЛАВНОМ ЭКРАНЕ ---- */
+  var top = document.getElementById('top');
+  top.addEventListener('pointerdown', function(e){
+    if(e.target.closest('a')) return;
+    if(RM) return;
+    var r = top.getBoundingClientRect();
+    var d = document.createElement('span');
+    d.className = 'tap';
+    d.style.left = (e.clientX - r.left) + 'px';
+    d.style.top = (e.clientY - r.top) + 'px';
+    top.appendChild(d);
+    setTimeout(function(){ d.remove(); }, 1000);
+  });
+
+  /* ---- ЗВЁЗДНОЕ НЕБО ---- */
+  var sky = document.getElementById('sky');
+  if(sky && !RM){
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<70;i++){
+      var s = document.createElement('span');
+      s.className = 'star';
+      s.style.left = (Math.random()*100).toFixed(2) + '%';
+      s.style.top = (Math.random()*62).toFixed(2) + '%';
+      s.style.animationDelay = (Math.random()*3.4).toFixed(2) + 's';
+      var sc = (0.6 + Math.random()*1.4).toFixed(2);
+      s.style.transform = 'scale(' + sc + ')';
+      frag.appendChild(s);
+    }
+    sky.appendChild(frag);
+  }
+
+  /* ---- СМЕНА КАРТИНОК В ФОТОПЕЧАТИ ---- */
+  var stack = document.getElementById('stack');
+  if(stack && !RM){
+    var imgs = stack.querySelectorAll('img');
+    var k = 0;
+    if(imgs.length > 1){
+      setInterval(function(){
+        imgs[k].classList.remove('on');
+        k = (k + 1) % imgs.length;
+        imgs[k].classList.add('on');
+      }, 3600);
+    }
+  }
+
+  /* ---- СЧЁТЧИКИ ---- */
+  var cio = new IntersectionObserver(function(en){
+    en.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target, to = +el.dataset.count, sfx = el.dataset.suffix || '', st = null;
+      function run(t){
+        if(!st) st = t;
+        var p = Math.min((t - st)/1300, 1);
+        var v = Math.round(to * (1 - Math.pow(1-p, 3)));
+        el.textContent = v + sfx;
+        if(p < 1) requestAnimationFrame(run);
+      }
+      requestAnimationFrame(run);
+      cio.unobserve(el);
+    });
+  }, {threshold: 0.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+  /* ---- КАЛЬКУЛЯТОР ---- */
+  var PRICES = {
+    'Глянцевые': 3500, 'Матовые': 3200, 'Сатиновые': 3800,
+    'Парящие': 9900, 'Звёздное небо': 15000, 'Фотопечать': 9500,
+    'Многоуровневые': 12000, 'Теневые': 11000
+  };
+  var cur = 'Глянцевые';
+  var pick = document.getElementById('pick');
+  Object.keys(PRICES).forEach(function(k){
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = k;
+    if(k === cur) b.className = 'on';
+    b.addEventListener('click', function(){
+      pick.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); cur = k; calc();
+    });
+    pick.appendChild(b);
+  });
+
+  var len = document.getElementById('len'), wid = document.getElementById('wid');
+  var lv = document.getElementById('lv'), wv = document.getElementById('wv');
+  var area = document.getElementById('area'), sum = document.getElementById('sum');
+  var shown = 0;
+
+  function fill(el){
+    var p = (el.value - el.min) / (el.max - el.min) * 100;
+    el.style.setProperty('--f', p + '%');
+  }
+  function fmt(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function calc(){
+    fill(len); fill(wid);
+    var L = +len.value, W = +wid.value;
+    lv.textContent = L.toFixed(1); wv.textContent = W.toFixed(1);
+    var A = L * W;
+    area.textContent = A.toFixed(1);
+    var target = A * PRICES[cur] + 12000; // 12000 - работа и профиль
+    var from = shown, st = null;
+    function run(t){
+      if(!st) st = t;
+      var p = Math.min((t - st)/450, 1);
+      var v = from + (target - from) * (1 - Math.pow(1-p, 3));
+      sum.innerHTML = fmt(v) + '<em>₸</em>';
+      if(p < 1) requestAnimationFrame(run); else shown = target;
+    }
+    requestAnimationFrame(run);
+  }
+  len.addEventListener('input', calc);
+  wid.addEventListener('input', calc);
+  calc();
+
+  /* ---- ПРЕДВЫБОР ТИПА ИЗ КНОПОК СЕКЦИЙ ---- */
+  document.querySelectorAll('[data-type]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var s = document.getElementById('fType');
+      if(s) s.value = a.dataset.type;
+    });
+  });
+
+  /* ---- МАСКА ТЕЛЕФОНА ---- */
+  var tel = document.getElementById('fTel');
+  tel.addEventListener('input', function(){
+    var d = tel.value.replace(/\D/g,'');
+    if(d.startsWith('8')) d = '7' + d.slice(1);
+    if(!d.startsWith('7')) d = '7' + d;
+    d = d.slice(0,11);
+    var o = '+7';
+    if(d.length > 1) o += ' (' + d.slice(1,4);
+    if(d.length >= 5) o += ') ' + d.slice(4,7);
+    if(d.length >= 8) o += ' ' + d.slice(7,9);
+    if(d.length >= 10) o += ' ' + d.slice(9,11);
+    tel.value = o;
+  });
+
+  /* ---- ОТПРАВКА В WHATSAPP ---- */
+  document.getElementById('send').addEventListener('click', function(){
+    var n = document.getElementById('fName').value.trim();
+    var t = document.getElementById('fTel').value.trim();
+    var ty = document.getElementById('fType').value;
+    if(t.replace(/\D/g,'').length < 11){
+      tel.focus();
+      tel.style.borderColor = '#ff6b6b';
+      setTimeout(function(){ tel.style.borderColor = ''; }, 1600);
+      return;
+    }
+    var msg = 'Здравствуйте! Заявка с сайта ГЛАДЬ.%0A'
+            + 'Имя: ' + encodeURIComponent(n || 'не указано') + '%0A'
+            + 'Телефон: ' + encodeURIComponent(t) + '%0A'
+            + 'Потолок: ' + encodeURIComponent(ty) + '%0A'
+            + 'Площадь: ' + encodeURIComponent(area.textContent) + ' м2';
+    window.open('https://wa.me/77000000000?text=' + msg, '_blank');
+  });
+})();
+</script>
+</body>
+</html>
